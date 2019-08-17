@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Random Thing
+    </title>
+    <script src='https://cdn.jsdelivr.net/gh/BrainJS/brain.js/browser.js'></script>
+  </head>
+  <body>
+    <form id='john'>
+      <input id='in'/>
+      <input type='Enter'/>
+    </form>
+    <span id='out'></span>
+    <script>
+      var net = new brain.reccurrent.LSTM();
+      net.train([
+      
+      ]);
+      var f = document.getElementsByTagName("form")[0];
+      f.addEventListener("submit", function () {
+        var x = document.getElementById("in").value;
+        if (x != '') {
+          net.train([x]);
+          document.getElementById("out").innerText = net.run(x);
+        }
+      });
+    </script>
+  </body>
+</html>
