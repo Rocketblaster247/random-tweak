@@ -19,12 +19,12 @@
       for (var i = 0; i < a.length; i ++) {
         b.push(a[i]+a[i]);
       }
-      net.train(b, {log:true});
+      net.train(b, {log:true,iterations:100});
       var f = document.getElementsByTagName("form")[0];
       f.addEventListener("submit", function () {
         var x = document.getElementById("in").value;
         if (x != '') {
-          net.train([x]);
+          net.train([x], {log:true,iterations:100);
           document.getElementById("out").innerText = net.run(x);
         }
       });
