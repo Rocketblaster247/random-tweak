@@ -14,7 +14,7 @@
     <span id='out'></span>
     <script>
       var net = new brain.recurrent.LSTM();
-      net.train("abcdefghijklmnopqrstuvexyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toString());
+      net.train("abcdefghijklmnopqrstuvexyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toString(), {log:true});
       var f = document.getElementsByTagName("form")[0];
       f.addEventListener("submit", function () {
         var x = document.getElementById("in").value;
